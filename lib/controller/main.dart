@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kismet/main_page.dart';
+import 'package:kismet/view/main_page.dart';
 
 void main() {
   runApp(const Kismet());

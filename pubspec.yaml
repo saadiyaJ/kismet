@@ -62,13 +62,29 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icons/random.svg
-    - assets/gifs/dice.gif
-    - assets/gifs/coin-minimal.gif
-    - assets/gifs/random_number.gif
-    - assets/gifs/heart_dice_shimmy.gif
     - assets/icons/dice.png
     - assets/icons/random-number.png
     - assets/icons/coin.png
+    - assets/icons/dice_game/1.png
+    - assets/icons/dice_game/2.png
+    - assets/icons/dice_game/3.png
+    - assets/icons/dice_game/4.png
+    - assets/icons/dice_game/5.png
+    - assets/icons/dice_game/6.png
+    - assets/icons/coin_game/heads.png
+    - assets/icons/coin_game/tails.png
+    - assets/icons/random_number_game/0.png
+    - assets/icons/random_number_game/1.png
+    - assets/icons/random_number_game/2.png
+    - assets/icons/random_number_game/3.png
+    - assets/icons/random_number_game/4.png
+    - assets/icons/random_number_game/5.png
+    - assets/icons/random_number_game/6.png
+    - assets/icons/random_number_game/7.png
+    - assets/icons/random_number_game/8.png
+    - assets/icons/random_number_game/9.png
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

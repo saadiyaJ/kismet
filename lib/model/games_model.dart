@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
-import 'package:kismet/model/flip_the_coin.dart';
-import 'package:kismet/model/random_number_generator.dart';
-import 'package:kismet/model/roll_the_dice.dart';
+import 'package:kismet/view/flip_the_coin.dart';
+import 'package:kismet/view/random_number_generator.dart';
+import 'package:kismet/view/roll_the_dice.dart';
 
 class GamesModel {
   String name;
@@ -12,6 +12,7 @@ class GamesModel {
   Color boxColor;
   bool ViewIsSelected;
   Widget routeTo;
+
 
   GamesModel(
       {required this.name,
@@ -30,7 +31,7 @@ class GamesModel {
         name: "Roll The Dice",
         iconPath: 'assets/icons/dice.png',
         playRules:
-        "Roll the dice and get a number \n between 1-9.",
+        "Roll the dice and get a number \n between 1-6.",
         boxColor: const Color(0xff92A3FD),
         ViewIsSelected: true,
         routeTo: const RollTheDice()));
@@ -39,7 +40,7 @@ class GamesModel {
     games.add(GamesModel(
       name: "Flip The Coin",
       iconPath: "assets/icons/coin.png",
-      playRules:"Flip the coin so it lands \n on Head or Tail.",
+      playRules:"Flip the coin so it lands \n on Heads or Tails.",
       boxColor: const Color(0xffC58BF2),
       ViewIsSelected: true,
       routeTo: const FlipTheCoin(),));
@@ -49,7 +50,7 @@ class GamesModel {
       name: "Random Number Generator",
       iconPath: "assets/icons/random-number.png",
       playRules:
-      "Choose a range of numbers. \n Then, Run the random number \n generator.",
+      "Run the random number generator\n and get a random number \nbetween 0 and 100.",
       boxColor: const Color(0xff92A3FD),
       ViewIsSelected: true,
       routeTo: const RandomNumberGenerator(),));

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kismet/view/custom_app_bar.dart';
-import 'model/games_model.dart';
+import '../model/games_model.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
