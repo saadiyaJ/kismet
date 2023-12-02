@@ -52,6 +52,7 @@ class GameModel {
       "assets/icons/random_number_game/7.png",
       "assets/icons/random_number_game/8.png",
       "assets/icons/random_number_game/9.png",
+      "assets/icons/random_number_game/10.png",
     ], result: [
       "0",
       "1",
@@ -62,7 +63,8 @@ class GameModel {
       "6",
       "7",
       "8",
-      "9"
+      "9",
+      "10"
     ], buttonLabel: "Generate"));
   return game;}
 }

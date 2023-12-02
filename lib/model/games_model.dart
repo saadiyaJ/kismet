@@ -50,7 +50,7 @@ class GamesModel {
       name: "Random Number Generator",
       iconPath: "assets/icons/random-number.png",
       playRules:
-      "Run the random number generator\n and get a random number \nbetween 0 and 100.",
+      "Run the random number generator\n and get a random number \nbetween 0 and 10.",
       boxColor: const Color(0xff92A3FD),
       ViewIsSelected: true,
       routeTo: const RandomNumberGenerator(),));

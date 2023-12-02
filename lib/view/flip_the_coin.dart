@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import "package:flutter/material.dart";
 import '../model/game_model.dart';
 import 'custom_app_bar.dart';
@@ -20,6 +22,19 @@ class _FlipTheCoinState extends State<FlipTheCoin> {
   Widget build(BuildContext context) {
     _getInitialInfo();
 
+    int randValue = Random().nextInt(2);
+    Image image = Image.asset(game[1].pathToImage[randValue]);
+
+    Text result = Text(
+      game[1].result[randValue],
+      textAlign: TextAlign.center,
+      style: const TextStyle(
+        fontWeight: FontWeight.w300,
+        color: Colors.black,
+        fontSize: 25,
+      ),
+    );
+
     return Scaffold(
       appBar: CustomAppBar(
         title: "Kismet",
@@ -31,17 +46,9 @@ class _FlipTheCoinState extends State<FlipTheCoin> {
             child: Container(
                 height: 500,
                 child: Column(children: [
-                  Image.asset(game[1].pathToImage[0]),
-                  Text(
-                    game[1].result[0],
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
+                  image,
+                  result,
+                  const SizedBox(height: 60),
                   Container(
                     height: 45,
                     width: 130,
@@ -59,7 +66,13 @@ class _FlipTheCoinState extends State<FlipTheCoin> {
                         ),
                         foregroundColor: const Color(0xffC58BF2),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          image;
+                          result;
+                        });
+
+                      },
                       child: const Text(
                         "Flip",
                         style: TextStyle(color: Colors.white),

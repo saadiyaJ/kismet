@@ -12,9 +12,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   List<GamesModel> games = [];
 
-  /*void _getGames() {
-    games = GamesModel.getGames();
-  }*/
+
 
   void _getInitialInfo() {
     games = GamesModel.getGames();

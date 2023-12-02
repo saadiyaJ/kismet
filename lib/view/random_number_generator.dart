@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import "package:flutter/material.dart";
 import '../model/game_model.dart';
 import 'custom_app_bar.dart';
@@ -19,6 +21,20 @@ class _RandomNumberGeneratorState extends State<RandomNumberGenerator> {
   @override
   Widget build(BuildContext context) {
     _getInitialInfo();
+
+    int randValue = Random().nextInt(11);
+    Image image = Image.asset(game[2].pathToImage[randValue]);
+
+    Text result = Text(
+      game[2].result[randValue],
+      textAlign: TextAlign.center,
+      style: const TextStyle(
+        fontWeight: FontWeight.w300,
+        color: Colors.black,
+        fontSize: 25,
+      ),
+    );
+
     return Scaffold(
       appBar: CustomAppBar(title: "Kismet"),
       body: Column(
@@ -28,17 +44,9 @@ class _RandomNumberGeneratorState extends State<RandomNumberGenerator> {
             child: Container(
                 height: 500,
                 child: Column(children: [
-                  Image.asset(game[2].pathToImage[0]),
-                  Text(
-                    game[2].result[0],
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
+                  image,
+                  result,
+                  const SizedBox(height: 60),
                   Container(
                     height: 45,
                     width: 130,
@@ -56,7 +64,13 @@ class _RandomNumberGeneratorState extends State<RandomNumberGenerator> {
                         ),
                         foregroundColor: const Color(0xffC58BF2),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          image;
+                          result;
+                        });
+
+                      },
                       child: const Text(
                         "Generate",
                         style: TextStyle(color: Colors.white),

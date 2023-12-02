@@ -1,3 +1,4 @@
+import 'dart:math';
 import "package:flutter/material.dart";
 import 'custom_app_bar.dart';
 import 'package:kismet/model/game_model.dart';
@@ -20,6 +21,22 @@ class _RollTheDiceState extends State<RollTheDice> {
   Widget build(BuildContext context) {
     _getInitialInfo();
 
+    int randValue = Random().nextInt(5);
+    Image image = Image.asset(game[0].pathToImage[randValue]);
+
+    Text result = Text(
+      game[0].result[randValue],
+      textAlign: TextAlign.center,
+      style: const TextStyle(
+        fontWeight: FontWeight.w300,
+        color: Colors.black,
+        fontSize: 25,
+      ),
+    );
+
+    //var randValue = Random().nextInt(5);
+    //var image= game[0].pathToImage[randValue];
+//
     return Scaffold(
       appBar: const CustomAppBar(title: "Kismet"),
       body: Column(
@@ -29,17 +46,9 @@ class _RollTheDiceState extends State<RollTheDice> {
             child: Container(
                 height: 500,
                 child: Column(children: [
-                  Image.asset(game[0].pathToImage[0]),
-                  Text(
-                    game[0].result[0],
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
+                  image,
+                  result,
+                  const SizedBox(height: 60),
                   Container(
                     height: 45,
                     width: 130,
@@ -49,6 +58,7 @@ class _RollTheDiceState extends State<RollTheDice> {
                       ),
                       borderRadius: BorderRadius.circular(50),
                     ),
+
                     child: TextButton(
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(
@@ -57,7 +67,13 @@ class _RollTheDiceState extends State<RollTheDice> {
                         ),
                         foregroundColor: const Color(0xffC58BF2),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          image;
+                          result;
+                        });
+
+                      },
                       child: const Text(
                         "Roll",
                         style: TextStyle(color: Colors.white),
