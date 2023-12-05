@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kismet/view/main_page.dart';
 
+import '../view/splash_screen.dart';
+
 void main() {
   runApp(const Kismet());
 }
@@ -14,7 +16,7 @@ class Kismet extends StatelessWidget {
     return const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          body: MainPage(),
+          body: SplashScreen(),
         ));
   }
 }

@@ -40,7 +40,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.9.0
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_logo.png"
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -84,6 +89,7 @@ flutter:
     - assets/icons/random_number_game/8.png
     - assets/icons/random_number_game/9.png
     - assets/icons/random_number_game/10.png
+    - assets/icons/splash_screen_icon.png
 
 
 

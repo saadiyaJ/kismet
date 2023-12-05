@@ -49,3 +49,14 @@
 	<true/>
 </dict>
 </plist>
+
+<key>CFBundleIcons</key>
+<dict>
+    <key>CFBundlePrimaryIcon</key>
+    <dict>
+        <key>CFBundleIconFiles</key>
+        <array>
+            <string>app_logo</string>
+        </array>
+    </dict>
+</dict>
