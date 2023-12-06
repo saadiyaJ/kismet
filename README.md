@@ -6,11 +6,13 @@
 This is a beginner-level Flutter project that can help you make up your mind by "leaving it to fate".
 
 ## Features
-1.
+1.Roll the dice game.
+2.Flip the coin game.
+3.Random number generator game.
 
 ## Screenshots
 
-<img src="https://github.com/saadiyaJ/kismet/blob/main/screenshots/kismet_app_gif.gif" alt="App Demo" width="200" height="350">
+<img src="https://github.com/saadiyaJ/kismet/blob/main/screenshots/kismet.gif" alt="App Demo" width="200" height="350">
 
 ## Getting Started
 Follow these steps to get a copy of the project up and running on your local machine.
