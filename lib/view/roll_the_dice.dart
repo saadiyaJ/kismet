@@ -21,7 +21,10 @@ class _RollTheDiceState extends State<RollTheDice> {
   Widget build(BuildContext context) {
     _getInitialInfo();
 
+    //this variable contains the random numbers generated
     int randValue = Random().nextInt(5);
+
+    // this variale contains the image that corresponds to said number by index
     Image image = Image.asset(game[0].pathToImage[randValue]);
 
     Text result = Text(
@@ -40,6 +43,7 @@ class _RollTheDiceState extends State<RollTheDice> {
     return Scaffold(
       appBar: const CustomAppBar(title: "Kismet"),
       body: Column(
+        //page design
         children: [
           Padding(
             padding: EdgeInsets.all(25),
@@ -49,6 +53,7 @@ class _RollTheDiceState extends State<RollTheDice> {
                   image,
                   result,
                   const SizedBox(height: 60),
+                  //button background design
                   Container(
                     height: 45,
                     width: 130,
@@ -58,7 +63,7 @@ class _RollTheDiceState extends State<RollTheDice> {
                       ),
                       borderRadius: BorderRadius.circular(50),
                     ),
-
+                    //the button
                     child: TextButton(
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(

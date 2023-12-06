@@ -14,7 +14,7 @@ class GameModel {
   static List<GameModel> getGame() {
     List<GameModel> game = [];
 
-    //roll the dice page elements
+    //roll the dice page elements pictures and textual results of each roll
     game.add(GameModel(pathToImage: [
       "assets/icons/dice_game/1.png",
       "assets/icons/dice_game/2.png",
@@ -31,7 +31,7 @@ class GameModel {
       "Six"
     ], buttonLabel: "Roll"));
 
-    //flip the coin page elements
+    //flip the coin page elements pictures and textual results of each flip
     game.add(GameModel(pathToImage: [
       "assets/icons/coin_game/heads.png",
       "assets/icons/coin_game/tails.png"
@@ -40,7 +40,7 @@ class GameModel {
       "Tails"
     ], buttonLabel: "Flip"));
 
-    //random number generator page elements
+    //random number generator page elements pictures and textual results of each generation
     game.add(GameModel(pathToImage: [
       "assets/icons/random_number_game/0.png",
       "assets/icons/random_number_game/1.png",

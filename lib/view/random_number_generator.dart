@@ -22,9 +22,13 @@ class _RandomNumberGeneratorState extends State<RandomNumberGenerator> {
   Widget build(BuildContext context) {
     _getInitialInfo();
 
+    //this variable contains the random numbers generated
     int randValue = Random().nextInt(11);
+
+    // this variale contains the image that corresponds to said number by index
     Image image = Image.asset(game[2].pathToImage[randValue]);
 
+    //this varibale stores the corresponding text form of the random number by index
     Text result = Text(
       game[2].result[randValue],
       textAlign: TextAlign.center,
@@ -37,6 +41,7 @@ class _RandomNumberGeneratorState extends State<RandomNumberGenerator> {
 
     return Scaffold(
       appBar: CustomAppBar(title: "Kismet"),
+      //page design
       body: Column(
         children: [
           Padding(
@@ -47,6 +52,7 @@ class _RandomNumberGeneratorState extends State<RandomNumberGenerator> {
                   image,
                   result,
                   const SizedBox(height: 60),
+                  //button background design
                   Container(
                     height: 45,
                     width: 130,
@@ -56,6 +62,7 @@ class _RandomNumberGeneratorState extends State<RandomNumberGenerator> {
                       ),
                       borderRadius: BorderRadius.circular(50),
                     ),
+                    //the button
                     child: TextButton(
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(

@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import "package:flutter/material.dart";
 import '../model/game_model.dart';
 import 'custom_app_bar.dart';
@@ -22,9 +21,13 @@ class _FlipTheCoinState extends State<FlipTheCoin> {
   Widget build(BuildContext context) {
     _getInitialInfo();
 
+    //this variable contains the random numbers generated
     int randValue = Random().nextInt(2);
+
+    // this variale contains the image that corresponds to said number by index
     Image image = Image.asset(game[1].pathToImage[randValue]);
 
+    //this varibale stores the corresponding text form of the random number by index
     Text result = Text(
       game[1].result[randValue],
       textAlign: TextAlign.center,
@@ -39,6 +42,8 @@ class _FlipTheCoinState extends State<FlipTheCoin> {
       appBar: CustomAppBar(
         title: "Kismet",
       ),
+
+      //page design
       body: Column(
         children: [
           Padding(
@@ -49,6 +54,7 @@ class _FlipTheCoinState extends State<FlipTheCoin> {
                   image,
                   result,
                   const SizedBox(height: 60),
+                  //button background design
                   Container(
                     height: 45,
                     width: 130,
@@ -58,6 +64,7 @@ class _FlipTheCoinState extends State<FlipTheCoin> {
                       ),
                       borderRadius: BorderRadius.circular(50),
                     ),
+                    //the button
                     child: TextButton(
                       style: TextButton.styleFrom(
                         textStyle: const TextStyle(
@@ -71,7 +78,6 @@ class _FlipTheCoinState extends State<FlipTheCoin> {
                           image;
                           result;
                         });
-
                       },
                       child: const Text(
                         "Flip",

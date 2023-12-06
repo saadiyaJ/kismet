@@ -10,10 +10,11 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List<GamesModel> games = [];
 
 
+  late List<GamesModel> games = [];
 
+  //provides game info
   void _getInitialInfo() {
     games = GamesModel.getGames();
   }
@@ -49,6 +50,7 @@ class _MainPageState extends State<MainPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      //games icons section
                       Padding(
                         padding: const EdgeInsets.all(15.0),
                         child: Image.asset(games[index].iconPath),
@@ -56,6 +58,7 @@ class _MainPageState extends State<MainPage> {
                       const SizedBox(
                         height: 20,
                       ),
+                      //game names section
                       Text(
                         games[index].name,
                         style: const TextStyle(
@@ -65,6 +68,7 @@ class _MainPageState extends State<MainPage> {
                         ),
                       ),
                       const SizedBox(height: 10),
+                      //play rules paragraph
                       Text(
                         games[index].playRules,
                         textAlign: TextAlign.center,
@@ -76,22 +80,20 @@ class _MainPageState extends State<MainPage> {
                       ),
                       //button
                       const SizedBox(height: 20),
+                      //buttons background style section
                       Container(
                         height: 45,
                         width: 130,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              games[index].ViewIsSelected
-                                  ? const Color(0xff9DCEFF)
-                                  : Colors.transparent,
-                              games[index].ViewIsSelected
-                                  ? const Color(0xff92A3FD)
-                                  : Colors.transparent,
+                              const Color(0xff9DCEFF),
+                              const Color(0xff92A3FD),
                             ],
                           ),
                           borderRadius: BorderRadius.circular(50),
                         ),
+                        //button section
                         child: TextButton(
                           child: const Text("Play"),
                           style: TextButton.styleFrom(
@@ -99,9 +101,7 @@ class _MainPageState extends State<MainPage> {
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                             ),
-                            foregroundColor: games[index].ViewIsSelected
-                                ? Colors.white
-                                : const Color(0xffC58BF2),
+                            foregroundColor: Colors.white,
                           ),
                           onPressed: () {
                             Navigator.of(context).push(
