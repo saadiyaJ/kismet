@@ -1,16 +1,19 @@
 import 'package:flutter/cupertino.dart';
 
 class GameModel {
+  //A single game page data attributes
   List<String> pathToImage;
   List<String> result;
   String buttonLabel;
 
+  //A single game constructor
   GameModel({
     required this.pathToImage,
     required this.result,
     required this.buttonLabel,
   });
 
+  //A list of a single game, populated using data and assets possible to show up when playing
   static List<GameModel> getGame() {
     List<GameModel> game = [];
 
@@ -66,7 +69,6 @@ class GameModel {
       "9",
       "10"
     ], buttonLabel: "Generate"));
-  return game;}
+    return game;
+  }
 }
-
-

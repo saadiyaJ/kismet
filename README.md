@@ -1,6 +1,6 @@
 # Flutter Kismet App
 
-<img src="https://github.com/saadiyaJ/kismet/blob/main/screenshots/kismet_app_gif.gif" alt="App Demo" width="200" height="350">
+<img src="https://github.com/saadiyaJ/kismet/blob/main/screenshots/kismet_app_gif.gif" alt="App Demo" width="200" height="370">
 
 ## Introduction
 This is a beginner-level Flutter project that can help you make up your mind by "leaving it to fate".

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kismet/view/main_page.dart';
-import '../view/splash_screen.dart';
+import 'view/widgets/splash_screen.dart';
 
 void main() {
   runApp(const Kismet());

@@ -1,6 +1,6 @@
 import 'dart:math';
 import "package:flutter/material.dart";
-import 'custom_app_bar.dart';
+import '../widgets/custom_app_bar.dart';
 import 'package:kismet/model/game_model.dart';
 
 class RollTheDice extends StatefulWidget {
@@ -91,6 +91,6 @@ class _RollTheDiceState extends State<RollTheDice> {
       ),
     );
 
-    //Image.asset(game[0].pathToImage[0]),
+
   }
 }

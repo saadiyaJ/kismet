@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import "package:flutter/material.dart";
-import '../model/game_model.dart';
-import 'custom_app_bar.dart';
+import '../../model/game_model.dart';
+import '../widgets/custom_app_bar.dart';
 
 class RandomNumberGenerator extends StatefulWidget {
   const RandomNumberGenerator({super.key});

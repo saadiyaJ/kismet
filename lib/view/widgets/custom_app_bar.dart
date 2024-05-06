@@ -6,6 +6,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color backgroundColor;
   final double elevation;
 
+  //WIDGET TO BE CALLED
   const CustomAppBar({
     this.title = 'Kismet',
     this.actions = const [],

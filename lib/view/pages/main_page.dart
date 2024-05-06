@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kismet/view/custom_app_bar.dart';
-import '../model/games_model.dart';
+import 'package:kismet/view/widgets/custom_app_bar.dart';
+import '../../model/games_model.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -104,6 +104,7 @@ class _MainPageState extends State<MainPage> {
                             foregroundColor: Colors.white,
                           ),
                           onPressed: () {
+                            //Navigator.pushNamed(context, GamesModel.getGames()[index].routeName),
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => games[index].routeTo,
