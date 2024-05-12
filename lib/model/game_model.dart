@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 
 class GameModel {
   //A single game page data attributes

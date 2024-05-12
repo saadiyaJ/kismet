@@ -2,6 +2,7 @@ import 'dart:math';
 import "package:flutter/material.dart";
 import '../../model/game_model.dart';
 import '../widgets/custom_app_bar.dart';
+import '../widgets/game_page_card.dart';
 
 class FlipTheCoin extends StatefulWidget {
   const FlipTheCoin({super.key});
@@ -12,31 +13,37 @@ class FlipTheCoin extends StatefulWidget {
 
 class _FlipTheCoinState extends State<FlipTheCoin> {
   List<GameModel> game = [];
+  int randValue=0;
+  Image image = Image.asset( "assets/icons/coin_game/tails.png");
+  Text result=Text('');
 
   void _getInitialInfo() {
     game = GameModel.getGame();
   }
 
+  void _generateResult() {
+    int newRandValue = Random().nextInt(2);
+    setState(() {
+      randValue = newRandValue;
+      image = Image.asset(game[1].pathToImage[randValue]);
+      result = Text(
+        game[1].result[randValue],
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+          fontWeight: FontWeight.w300,
+          color: Colors.black,
+          fontSize: 25,
+        ),
+      );
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     _getInitialInfo();
 
-    //this variable contains the random numbers generated
-    int randValue = Random().nextInt(2);
 
-    // this variale contains the image that corresponds to said number by index
-    Image image = Image.asset(game[1].pathToImage[randValue]);
-
-    //this varibale stores the corresponding text form of the random number by index
-    Text result = Text(
-      game[1].result[randValue],
-      textAlign: TextAlign.center,
-      style: const TextStyle(
-        fontWeight: FontWeight.w300,
-        color: Colors.black,
-        fontSize: 25,
-      ),
-    );
 
     return Scaffold(
       appBar: CustomAppBar(
@@ -44,50 +51,10 @@ class _FlipTheCoinState extends State<FlipTheCoin> {
       ),
 
       //page design
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(25),
-            child: Container(
-                height: 500,
-                child: Column(children: [
-                  image,
-                  result,
-                  const SizedBox(height: 60),
-                  //button background design
-                  Container(
-                    height: 45,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xff9DCEFF), Color(0xff92A3FD)],
-                      ),
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    //the button
-                    child: TextButton(
-                      style: TextButton.styleFrom(
-                        textStyle: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        foregroundColor: const Color(0xffC58BF2),
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          image;
-                          result;
-                        });
-                      },
-                      child: const Text(
-                        "Flip",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ])),
-          ),
-        ],
+      body: GamePageCard(
+        image: image,
+        result: result,
+        onTap: () => _generateResult(),
       ),
     );
   }
